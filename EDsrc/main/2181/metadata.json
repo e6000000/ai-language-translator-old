@@ -1,0 +1,7 @@
+{
+  "name": "Live Translator",
+  "description": "Real-time German to English voice translation",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

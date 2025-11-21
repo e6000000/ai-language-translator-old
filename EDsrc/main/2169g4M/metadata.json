@@ -1,0 +1,7 @@
+{
+  "name": "AI Language Translator",
+  "description": "A modern web application that translates text between various languages using the Google Gemini AI. It offers a clean, responsive, and intuitive interface for seamless translation.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

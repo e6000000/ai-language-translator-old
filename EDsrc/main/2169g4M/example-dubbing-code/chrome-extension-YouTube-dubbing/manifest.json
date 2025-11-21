@@ -1,0 +1,54 @@
+{
+   "action": {
+      "default_popup": "popup.html",
+      "default_title": "YouTube-Dubbing"
+   },
+   "background": {
+      "service_worker": "background.js"
+   },
+   "commands": {
+      "swap-volume-settings": {
+         "description": "__MSG_swapVolumeSettingsCommand__",
+         "suggested_key": {
+            "default": "Alt+S",
+            "mac": "Alt+S"
+         }
+      }
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "css": [ "content-scripts/content.css" ],
+      "exclude_matches": [ "*://*.google.com/*", "*://discord.com/*", "*://repository.modelio.org/*" ],
+      "js": [ "content-scripts/content.js" ],
+      "matches": [ "*://*/*" ]
+   }, {
+      "all_frames": true,
+      "exclude_matches": [ "*://*.google.com/*", "*://discord.com/*", "*://repository.modelio.org/*" ],
+      "js": [ "content-scripts/metadata.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_description__",
+   "host_permissions": [ "\u003Call_urls>" ],
+   "icons": {
+      "128": "icon/128.png",
+      "16": "icon/16.png",
+      "32": "icon/32.png",
+      "48": "icon/48.png",
+      "96": "icon/96.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsk5cZ10brxpHVORM6GPohHuJCxLzX3ssxeXhvrXTHItEm0H5cKYkbetFX8RhicJLezh8QUzkYXFYrBq/iUgK9+PNtWvOugwn65Gci9D3vuxeHNCNwP09fd8mcVZPrcxxb2TtmmW9ZcRkMQf7FGm0tSZzwW15CmUehLlBEQ0E58aTRbNhRdVrlIeYNoaK05vawh0VCSkL2n3enHAMSTvrfgSS7zo4r8D1zOcGpjfzmkIk4PiLksOExZ+MmTgxzrHbhmkNGB8WS/jy2EsXStrXilBDIWdy7VeyvdQGUEUbkZboWvxC/nXgeMvXuKTV/zep2XYQqSqVbeGJa4E+UTRESwIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_name__",
+   "permissions": [ "storage", "contextMenus", "activeTab", "webRequest" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "3.1.18",
+   "web_accessible_resources": [ {
+      "matches": [ "*://*/*" ],
+      "resources": [ "images/*" ]
+   }, {
+      "matches": [ "*://*/*" ],
+      "resources": [ "injectScript.js" ]
+   } ]
+}
